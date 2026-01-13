@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><Progress></Progress></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress</title>
 </head>
-<script>
-  let progreso = 0;
 
-  // setInterval() ejecuta esta función de forma repetitiva
-  // cada 500 milisegundos, simulando el avance del progreso
-  setInterval(() => {
+<body>
+  <!-- Barra de progreso -->
+  <progress id="barra" value="0" max="100"></progress>
 
-    // En cada repetición se aumenta el valor del progreso
-    progreso += 10;
+  <script>
+    // Se obtiene la barra de progreso del HTML
+    const barra = document.getElementById('barra');
 
-    // Cuando el progreso llega al 100% o lo supera,
-    // en lugar de detener el intervalo, se reinicia a 0
-    if (progreso >= 100) {
-      progreso = 0;
-    }
+    let progreso = 0;
 
-    // Se actualiza el valor de la barra de progreso
-    barra.value = progreso;
+    // setInterval() ejecuta esta función de forma repetitiva
+    // cada 500 milisegundos, simulando el avance del progreso
+    setInterval(() => {
 
-  }, 500);
-</script>
+      // En cada repetición se aumenta el valor del progreso
+      progreso += 10;
+
+      // Cuando el progreso llega al 100% o lo supera,
+      // en lugar de detener el intervalo, se reinicia a 0
+      if (progreso >= 100) {
+        progreso = 0;
+      }
+
+      // Se actualiza el valor de la barra de progreso
+      barra.value = progreso;
+
+    }, 500);
+  </script>
+</body>
 </html>
