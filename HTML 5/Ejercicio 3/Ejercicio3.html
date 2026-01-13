@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop - Ejercicio 3</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1> Drag and Drop</h1>
+    <p class="description">Arrastra el elemento verde para ver los eventos en la consola</p>
+    
+    <div class="draggable-box" draggable="true"
+      ondragstart="iniciarDrag(event)"
+      ondragend="finalizarDrag(event)">
+      Arrástrame 🖱️
+    </div>
+    
+    <div class="info">
+      <h3>📋 Información de Eventos:</h3>
+      <p><strong>ondragstart:</strong> Se dispara cuando comienzas a arrastrar el elemento. Es el momento inicial del arrastre.</p>
+      <p><strong>ondragend:</strong> Se dispara cuando sueltas el elemento (finalizas el arrastre).</p>
+    </div>
+  </div>
+
+  <script>
+    function iniciarDrag(event) {
+      console.log('✅ DRAGSTART: Comienza el arrastre del elemento');
+      console.log('Evento:', event);
+      console.log('Elemento arrastrado:', event.target);
+      event.target.style.opacity = '0.7';
+    }
+
+    function finalizarDrag(event) {
+      console.log('🏁 DRAGEND: Se sueltó el elemento');
+      console.log('Evento:', event);
+      console.log('Elemento liberado:', event.target);
+      event.target.style.opacity = '1';
+    }
+  </script>
+</body>
+</html>
