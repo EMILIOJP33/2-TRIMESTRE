@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <dialog id="miDialogo">
+<p>Lo estás haciendo genial sigue así</p>
+<button id="cerrar">Cerrar</button>
+</dialog>
+<button id="abrir">Tengo algo que decirte</button>
+</body>
+<div class="Diagogo">
+<script>
+const dialogo = document.getElementById('miDialogo');
+document.getElementById('abrir').onclick = () => dialogo.showModal();
+document.getElementById('cerrar').onclick = () => dialogo.close();
+</script>
+</div>
+    
+</body>
+</html>
